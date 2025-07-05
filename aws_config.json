@@ -1,0 +1,16 @@
+{
+  "buckets": {
+    "data": "nexus-llm-data-1751705663",
+    "models": "nexus-llm-models-1751705663",
+    "logs": "nexus-llm-logs-1751705663",
+    "code": "nexus-llm-code-1751705663"
+  },
+  "region": "us-west-2",
+  "project": "nexus-llm",
+  "timestamp": 1751705663,
+  "ecr_repositories": {
+    "training": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/training",
+    "api": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/api",
+    "data-processing": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/data-processing"
+  }
+}

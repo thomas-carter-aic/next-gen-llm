@@ -1,0 +1,31 @@
+{
+    "Rules": [
+        {
+            "ID": "DatasetLifecycle",
+            "Status": "Enabled",
+            "Filter": {
+                "Prefix": "raw/"
+            },
+            "Transitions": [
+                {
+                    "Days": 30,
+                    "StorageClass": "STANDARD_IA"
+                },
+                {
+                    "Days": 90,
+                    "StorageClass": "GLACIER"
+                }
+            ]
+        },
+        {
+            "ID": "LogsLifecycle",
+            "Status": "Enabled",
+            "Filter": {
+                "Prefix": "logs/"
+            },
+            "Expiration": {
+                "Days": 90
+            }
+        }
+    ]
+}

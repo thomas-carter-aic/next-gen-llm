@@ -1,0 +1,33 @@
+{
+  "phase": "setup_monitoring",
+  "start_time": "2025-07-05T04:54:23.825842",
+  "completed_steps": [
+    "create_s3_buckets",
+    "deploy_vpc_infrastructure",
+    "create_ecr_repositories",
+    "create_simple_api_deployment",
+    "setup_monitoring"
+  ],
+  "failed_steps": [
+    {
+      "step": "build_and_push_containers",
+      "error": "DeploymentOrchestrator.run_command() got an unexpected keyword argument 'input'",
+      "timestamp": "2025-07-05T04:57:04.966037"
+    }
+  ],
+  "resources_created": {
+    "s3_buckets": {
+      "data": "nexus-llm-data-1751705663",
+      "models": "nexus-llm-models-1751705663",
+      "logs": "nexus-llm-logs-1751705663",
+      "code": "nexus-llm-code-1751705663"
+    },
+    "vpc_stack": "nexus-llm-vpc",
+    "ecr_repositories": {
+      "training": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/training",
+      "api": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/api",
+      "data-processing": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/data-processing"
+    }
+  },
+  "end_time": "2025-07-05T04:57:04.966642"
+}

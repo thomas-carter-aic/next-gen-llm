@@ -1,0 +1,30 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::nexus-llm-data-1751705601",
+                "arn:aws:s3:::nexus-llm-data-1751705601/*",
+                "arn:aws:s3:::nexus-llm-models-1751705601",
+                "arn:aws:s3:::nexus-llm-models-1751705601/*",
+                "arn:aws:s3:::nexus-llm-code-1751705601",
+                "arn:aws:s3:::nexus-llm-code-1751705601/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sagemaker:CreateTrainingJob",
+                "sagemaker:DescribeTrainingJob",
+                "sagemaker:StopTrainingJob"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

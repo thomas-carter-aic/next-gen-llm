@@ -1,0 +1,46 @@
+2025-07-05 04:54:23,547 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-05 04:54:23,825 - INFO - Initialized deployment orchestrator for nexus-llm
+2025-07-05 04:54:23,826 - INFO - Starting complete system deployment...
+2025-07-05 04:54:23,826 - INFO - Executing step: create_s3_buckets
+2025-07-05 04:54:23,826 - INFO - Creating S3 buckets...
+2025-07-05 04:54:25,166 - INFO - Created data bucket: nexus-llm-data-1751705663
+2025-07-05 04:54:25,575 - INFO - Configured lifecycle policy for bucket nexus-llm-data-1751705663
+2025-07-05 04:54:27,008 - INFO - Created models bucket: nexus-llm-models-1751705663
+2025-07-05 04:54:28,442 - INFO - Created logs bucket: nexus-llm-logs-1751705663
+2025-07-05 04:54:29,568 - INFO - Created code bucket: nexus-llm-code-1751705663
+2025-07-05 04:54:29,568 - INFO - Step 'create_s3_buckets' completed successfully
+2025-07-05 04:54:29,568 - INFO - Executing step: deploy_vpc_infrastructure
+2025-07-05 04:54:29,568 - INFO - Deploying VPC infrastructure...
+2025-07-05 04:54:30,492 - INFO - Waiting for stack nexus-llm-vpc create to complete...
+2025-07-05 04:57:03,673 - INFO - Stack nexus-llm-vpc create completed successfully
+2025-07-05 04:57:03,835 - INFO - VPC infrastructure deployed successfully
+2025-07-05 04:57:03,835 - INFO - Step 'deploy_vpc_infrastructure' completed successfully
+2025-07-05 04:57:03,836 - INFO - Executing step: create_ecr_repositories
+2025-07-05 04:57:03,836 - INFO - Creating ECR repositories...
+2025-07-05 04:57:04,575 - INFO - Created ECR repository: 526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/training
+2025-07-05 04:57:04,718 - INFO - Created ECR repository: 526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/api
+2025-07-05 04:57:04,860 - INFO - Created ECR repository: 526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/data-processing
+2025-07-05 04:57:04,860 - INFO - Step 'create_ecr_repositories' completed successfully
+2025-07-05 04:57:04,860 - INFO - Executing step: build_and_push_containers
+2025-07-05 04:57:04,860 - INFO - Building and pushing container images...
+2025-07-05 04:57:04,965 - ERROR - Step 'build_and_push_containers' failed: DeploymentOrchestrator.run_command() got an unexpected keyword argument 'input'
+2025-07-05 04:57:04,966 - ERROR - Deployment failed: DeploymentOrchestrator.run_command() got an unexpected keyword argument 'input'
+2025-07-05 04:57:04,966 - ERROR - Deployment failed: DeploymentOrchestrator.run_command() got an unexpected keyword argument 'input'
+2025-07-05 04:58:42,755 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-05 04:58:43,084 - INFO - Initialized deployment orchestrator for nexus-llm
+2025-07-05 04:58:43,084 - INFO - Starting infrastructure-only deployment...
+2025-07-05 04:58:43,084 - INFO - Loaded existing deployment state
+2025-07-05 04:58:43,084 - INFO - Executing step: create_simple_api_deployment
+2025-07-05 04:58:43,084 - INFO - Creating simple API deployment...
+2025-07-05 04:58:44,446 - INFO - Created ECS cluster: nexus-llm-cluster
+2025-07-05 04:58:44,446 - INFO - Simple API deployment completed
+2025-07-05 04:58:44,446 - INFO - Step 'create_simple_api_deployment' completed successfully
+2025-07-05 04:58:44,446 - INFO - Executing step: setup_monitoring
+2025-07-05 04:58:44,446 - INFO - Setting up monitoring and alarms...
+2025-07-05 04:58:45,470 - INFO - CloudWatch dashboard created
+2025-07-05 04:58:45,470 - INFO - Monitoring setup completed
+2025-07-05 04:58:45,471 - INFO - Step 'setup_monitoring' completed successfully
+2025-07-05 04:58:45,472 - INFO - Generating deployment report...
+2025-07-05 04:58:45,472 - INFO - Deployment report generated: deployment_report.json
+2025-07-05 04:58:45,472 - INFO - Infrastructure deployment completed successfully!
+2025-07-05 04:58:45,472 - INFO - Deployment report: deployment_report.json

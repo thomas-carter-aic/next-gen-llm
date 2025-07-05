@@ -1,0 +1,45 @@
+{
+  "deployment_summary": {
+    "project_name": "nexus-llm",
+    "region": "us-west-2",
+    "start_time": "2025-07-05T04:54:23.825842",
+    "end_time": "2025-07-05T04:58:45.472415",
+    "status": "PARTIAL_FAILURE"
+  },
+  "resources_created": {
+    "s3_buckets": {
+      "data": "nexus-llm-data-1751705663",
+      "models": "nexus-llm-models-1751705663",
+      "logs": "nexus-llm-logs-1751705663",
+      "code": "nexus-llm-code-1751705663"
+    },
+    "vpc_stack": "nexus-llm-vpc",
+    "ecr_repositories": {
+      "training": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/training",
+      "api": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/api",
+      "data-processing": "526053094705.dkr.ecr.us-west-2.amazonaws.com/nexus-llm/data-processing"
+    }
+  },
+  "completed_steps": [
+    "create_s3_buckets",
+    "deploy_vpc_infrastructure",
+    "create_ecr_repositories",
+    "create_simple_api_deployment",
+    "setup_monitoring"
+  ],
+  "failed_steps": [
+    {
+      "step": "build_and_push_containers",
+      "error": "DeploymentOrchestrator.run_command() got an unexpected keyword argument 'input'",
+      "timestamp": "2025-07-05T04:57:04.966037"
+    }
+  ],
+  "configuration": {},
+  "next_steps": [
+    "Infrastructure is ready for model training",
+    "Run data preprocessing: python scripts/data_preprocessing.py --download-pile --process-data",
+    "Launch training: python scripts/launch_training.py --model-name llama-3-1-finetuned --monitor",
+    "Deploy API after training completion",
+    "Configure custom domain and SSL certificate"
+  ]
+}
