@@ -1,0 +1,39 @@
+# Production API Requirements
+# Document ID: api_requirements_20250705_070000
+# Created: July 5, 2025 07:00:00 UTC
+
+# Core web framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.4.2
+
+# ML and AI libraries
+torch==2.0.1
+torchvision==0.15.2
+torchaudio==2.0.2
+transformers==4.35.0
+accelerate==0.24.0
+tokenizers==0.14.1
+
+# AWS integration
+boto3==1.29.7
+botocore==1.32.7
+
+# System monitoring
+psutil==5.9.5
+GPUtil==1.4.0
+
+# Data processing
+numpy==1.24.3
+pandas==2.1.1
+
+# Utilities
+python-multipart==0.0.6
+python-json-logger==2.0.7
+requests==2.31.0
+aiofiles==23.2.1
+
+# Development and testing (optional)
+pytest==7.4.2
+pytest-asyncio==0.21.1
+httpx==0.25.0
